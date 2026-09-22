@@ -1,6 +1,6 @@
 # Actor Workbench
 
-A separate Windows application for exporting Infinity Battlescape actors and modules to Blender and staging supported edits for local modding. The Mission Editor is not modified by this application. No upload, GitHub integration or network access is used at runtime.
+A separate Windows application for exporting Infinity Battlescape actors and modules to Blender and staging supported edits for local modding. 
 
 ## Run
 
