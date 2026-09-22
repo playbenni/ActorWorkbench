@@ -1,0 +1,9 @@
+Actor Workbench is an experimental tool for Infinity Battlescape actor modding.
+
+This installer includes the application and its Python dependencies. You do not need to install Python separately.
+
+Install Blender separately and use your own Infinity Battlescape installation. Choose both locations inside Actor Workbench. Game files, Blender, and sample ship models are not included.
+
+The installer does not modify your game files. Mods are staged and installed separately from within the app. Uninstalling Actor Workbench does not remove your models, mod folders or recovery backups, and does not restore installed game mods. Restore those mods in the app before uninstalling if needed.
+
+Generated assets have passed file-format and round-trip tests, but live in-game appearance and behavior remain unverified.

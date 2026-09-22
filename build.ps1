@@ -18,4 +18,6 @@ if ($LASTEXITCODE -ne 0) { throw 'Tcl/Tk runtime check failed' }
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
 & $workbenchPython -m PyInstaller --clean --noconfirm --onedir --windowed --name ActorWorkbench --add-data 'ibworkbench;ibworkbench' --exclude-module capstone --exclude-module pefile --exclude-module mmh3 --exclude-module xxhash main.py
 if ($LASTEXITCODE -ne 0) { throw 'Executable packaging failed' }
+& $workbenchPython (Join-Path $PSScriptRoot 'tools/collect_runtime_licenses.py')
+if ($LASTEXITCODE -ne 0) { throw 'Runtime license collection failed' }
 Write-Host 'Built dist/ActorWorkbench/ActorWorkbench.exe. Keep its _internal folder alongside it. No game assets or Blender are bundled.'

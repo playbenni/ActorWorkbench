@@ -1,5 +1,13 @@
 # Local validation
 
+## Windows installer 0.1.0 — 2026-09-22
+
+- Rebuilt the packaged application after all 57 tests passed.
+- Compiled a per-user Windows x64 installer using Inno Setup 6.7.3. Python and runtime dependency notices are bundled; Blender and game assets are excluded.
+- Installed into a temporary directory in the normal Windows user context. All 1,120 installed payload files matched the build by SHA-256. The installed executable's GUI/catalog self-test passed.
+- Silent reinstall and uninstall both returned success. Uninstallation removed the app payload and retained a user-created placeholder file. Test logs are local build artifacts.
+- The installer is unsigned. Testing was on this Windows machine, not a separate clean VM. Live game behavior remains unverified.
+
 ## Repository preparation — 2026-09-22
 
 - The source-only suite discovers 57 tests: 54 pass and 3 real-asset tests skip when `IB_GAME_ROOT` points to a missing installation. No game data is needed for those 54 tests.

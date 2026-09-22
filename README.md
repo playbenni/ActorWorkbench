@@ -4,6 +4,10 @@ A separate Windows application for exporting Infinity Battlescape actors and mod
 
 ## Run
 
+Download `ActorWorkbench-0.1.0-Setup-x64.exe` from the [GitHub release](https://github.com/playbenni/ActorWorkbench/releases/tag/v0.1.0) for Windows 10/11 x64. The installer includes Python and app dependencies, installs for the current user, and creates a Start menu shortcut. Blender and the game must be installed separately. The installer is unsigned; Windows may show an unknown-publisher warning. A SHA-256 checksum is provided with the release.
+
+Uninstall through Windows **Installed apps**. Your models, staged mods and recovery backups are retained. Uninstalling the app does not restore game mods; restore those in Workbench first if needed.
+
 Open `dist/ActorWorkbench/ActorWorkbench.exe`. Keep its `_internal` dependency folder alongside the EXE (copy the whole ActorWorkbench folder when moving it). Select the game installation folder (containing `Dev`) and an installed `blender.exe`. Blender 5.0 and 5.2 have been tested; Blender itself is not bundled. Click **Scan actors**, filter/select an actor, then **Export selected → .blend**. Large stations can take several minutes and produce large files. Progress appears in the log.
 
 Files are exported with meter units, Z-up coordinates, the original triangle connectivity, declared material groups, UV layers and mesh normals. Textures that can be decoded are packed into the `.blend`; it can be viewed without the source installation. Read the companion `.report.json` for actor-specific omissions.
@@ -112,6 +116,8 @@ py -3.12 -m venv .venv
 ```
 
 Select your game and Blender locations in the app. Run `./build.ps1` to test and package `dist/ActorWorkbench/ActorWorkbench.exe`. Keep its `_internal` folder alongside the executable. Only app code/dependencies are bundled, not extracted assets.
+
+To build the Windows installer, install [Inno Setup 6](https://jrsoftware.org/isdl.php), then run `./build-installer.ps1`. Use `-InnoCompiler 'path/to/ISCC.exe'` for a custom compiler location and `-Version 0.1.0` to set the release version. The installer and SHA-256 file are written to `dist/installer/`. `-SkipAppBuild` reuses an already built app. Bundled dependency notices are included under `ThirdPartyLicenses`.
 
 CLI examples (run from this directory):
 
