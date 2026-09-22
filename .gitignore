@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+samples/
+*.spec
+.env
+.env.*
+*.log
+*.blend
+*.blend1
+*.glb
+*.gltf
+*.ibmesh
+*.exe
+*.zip
